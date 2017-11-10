@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'chrisbra/csv.vim'
+Plugin 'isRuslan/vim-es6'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -250,6 +252,8 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+let g:go_version_warning = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -290,3 +294,5 @@ noremap <silent>be :BufExplorer<CR>
 noremap <silent>nf :NERDTreeFind<CR>
 noremap <silent>nt :NERDTree<CR>
 noremap <silent>gb :Gblame<CR>
+noremap <silent>sp :split<CR>
+noremap <silent>vs :vsplit<CR>
