@@ -50,11 +50,16 @@ Plugin 'christoomey/vim-tmux-navigator'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/grep.vim'
 
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'roxma/nvim-yarp'
+Plugin 'Shougo/deoplete.nvim'
 Bundle 'nikvdp/ejs-syntax'
 Bundle 'othree/html5.vim'
 Bundle 'juvenn/mustache.vim'
-" Bundle 'edsono/vim-matchit'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
+Plugin 'thinca/vim-ref'
+Plugin 'kbrw/neovim-elixir'
 Bundle 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Bundle 'tpope/vim-haml'
@@ -64,6 +69,8 @@ Bundle 'solarnz/thrift.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'posva/vim-vue'
+
 call vundle#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -254,6 +261,14 @@ endif
 
 let g:go_version_warning = 0
 
+" let g:deoplete#enable_at_startup = 1
+let g:alchemist_tag_disable = 1
+let g:alchemist_tag_map = '<C-]>'
+let g:alchemist_tag_stack_map = '<C-T>'
+let g:alchemist_iex_term_size = 15
+let g:alchemist_iex_term_split = 'split'
+let g:alchemist#elixir_erlang_src = "/Users/happy/Sources/elixir"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,6 +302,8 @@ let g:rsenseHome = "/usr/lib/rsense-0.3"
 let g:rsenseUseOmniFunc = 1
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let NERDTreeShowHidden=1
+
+let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
 
 map <F8> :NERDTreeToggle<CR>
 map <F7> :BufExplorer<CR>

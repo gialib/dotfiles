@@ -2,7 +2,7 @@ task :default => :install
 
 desc 'Install vim application, configurations and plugins'
 task :install do
-  update_package_manager_and_install_vim
+  # update_package_manager_and_install_vim
   install_vim_configurations
   install_vundle_and_plugins
 end
