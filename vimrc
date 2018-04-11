@@ -306,6 +306,8 @@ let NERDTreeShowHidden=1
 
 let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
 
+autocmd BufWritePre * :%s/\s\+$//e
+
 map <F8> :NERDTreeToggle<CR>
 map <F7> :BufExplorer<CR>
 noremap <silent>be :BufExplorer<CR>
