@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chrisbra/csv.vim'
-Plugin 'isRuslan/vim-es6'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -26,8 +25,11 @@ Plugin 'tpope/vim-markdown'
 " Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'corntrace/bufexplorer'
+
 Bundle 'Command-T'
 " Plugin 'tpope/vim-vividchalk'
+
+Bundle 'luochen1990/rainbow'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
@@ -71,7 +73,9 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'posva/vim-vue'
-
+Bundle 'isRuslan/vim-es6'
+Bundle 'neomake/neomake'
+Bundle 'mattn/emmet-vim'
 call vundle#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -207,7 +211,24 @@ if executable('ag')
         \ 'ag --follow --nocolor --nogroup --hidden -g ""'
 endif
 
- """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" undotree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if v:version >= 703
+    "undo settings
+    set undodir=~/.vim/undofiles
+    set undofile
+
+    set colorcolumn=+1 "mark the ideal max text width
+endif
+
+nnoremap <F5> :UndotreeToggle<cr>
+
+
+
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup = 1
@@ -301,7 +322,8 @@ highlight clear SignColumn
 set dir=~/.vim/backup/
 let g:rsenseHome = "/usr/lib/rsense-0.3"
 let g:rsenseUseOmniFunc = 1
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+" let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack -H --nocolor --nogroup --column"
 let NERDTreeShowHidden=1
 
 let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
@@ -311,8 +333,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 map <F8> :NERDTreeToggle<CR>
 map <F7> :BufExplorer<CR>
 noremap <silent>be :BufExplorer<CR>
+noremap <silent>beh :BufExplorerHorizontalSplit<CR>
+noremap <silent>bev :BufExplorerVerticalSplit<CR>
 noremap <silent>nf :NERDTreeFind<CR>
 noremap <silent>nt :NERDTree<CR>
 noremap <silent>gb :Gblame<CR>
 noremap <silent>sp :split<CR>
 noremap <silent>vs :vsplit<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neomake_elixir_enabled_makers = ['credo']
+autocmd! BufWritePost * Neomake
