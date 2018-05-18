@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'mhinz/vim-mix-format'
+Plugin 'rizzatti/dash.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'keith/swift.vim'
@@ -16,6 +18,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
+Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'tpope/vim-endwise'
@@ -316,3 +319,6 @@ noremap <silent>nt :NERDTree<CR>
 noremap <silent>gb :Gblame<CR>
 noremap <silent>sp :split<CR>
 noremap <silent>vs :vsplit<CR>
+noremap <silent>mf :MixFormat<CR>
+noremap <silent>mfd :MixFormatDiff<CR>
+noremap <silent>cm :CommandT<CR>
