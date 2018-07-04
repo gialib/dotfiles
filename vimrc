@@ -26,10 +26,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-markdown'
-" Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'corntrace/bufexplorer'
-Bundle 'Command-T'
+" Plugin 'tpope/vim-surround'
+" Bundle 'Command-T'
 " Plugin 'tpope/vim-vividchalk'
 
 Plugin 'vim-ruby/vim-ruby'
@@ -307,7 +307,11 @@ let g:rsenseUseOmniFunc = 1
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let NERDTreeShowHidden=1
 
+let NERDTreeCascadeSingleChildDir = 0
+let NERDTreeCascadeOpenSingleChildDir = 0
+
 let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
+let g:vim_json_syntax_conceal = 0
 
 autocmd BufWritePre * :%s/\s\+$//e
 
