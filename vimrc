@@ -304,7 +304,7 @@ highlight clear SignColumn
 set dir=~/.vim/backup/
 let g:rsenseHome = "/usr/lib/rsense-0.3"
 let g:rsenseUseOmniFunc = 1
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ag --nogroup --nocolor --column"
 let NERDTreeShowHidden=1
 
 let NERDTreeCascadeSingleChildDir = 0
