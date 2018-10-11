@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'mhinz/vim-mix-format'
+Plugin 'gialib/vim-autoformat'
 Plugin 'rizzatti/dash.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'isRuslan/vim-es6'
@@ -210,7 +211,7 @@ if executable('ag')
         \ 'ag --follow --nocolor --nogroup --hidden -g ""'
 endif
 
- """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup = 1
@@ -323,6 +324,12 @@ noremap <silent>nt :NERDTree<CR>
 noremap <silent>gb :Gblame<CR>
 noremap <silent>sp :split<CR>
 noremap <silent>vs :vsplit<CR>
-noremap <silent>mf :MixFormat<CR>
-noremap <silent>mfd :MixFormatDiff<CR>
+noremap <silent>mf :Autoformat<CR>
 noremap <silent>cm :CommandT<CR>
+
+" gem install ruby-beautify2
+" npm -g install js-beautify
+" npm install --global xo       " https://github.com/xojs/xo
+"
+" svn  checkout  "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"  "$HOME/astyle"
+" http://astyle.sourceforge.net/install.html
